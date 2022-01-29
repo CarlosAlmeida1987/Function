@@ -1,0 +1,244 @@
+/* This code is only meant for previewing your Reflow design. */
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+    width: 100%;
+}
+
+#box {
+    float: left;
+    height: 700px;
+    margin: 0px;
+    clear: none;
+    width: 100%;
+}
+
+#box6 {
+    float: left;
+    height: 412px;
+    margin-left: 0%;
+    margin-top: 162px;
+    clear: none;
+    width: 600px;
+    background-image:url("img/fundo_600_410.jpg");
+    background-attachment: scroll;
+    -webkit-background-size: auto;
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat repeat;
+}
+
+#input {
+    float: left;
+    height: 45px;
+    font-size: 1em;
+    margin-left: 40.265896%;
+    margin-top: 38px;
+    clear: both;
+    width: 24.923391%;
+}
+
+#box7 {
+    float: left;
+    height: 143px;
+    margin-left: 3.257813%;
+    margin-top: 16px;
+    clear: none;
+    width: 51.333333%;
+    background-image:url("img/Jaleco_194_142%201.jpg");
+    background-attachment: scroll;
+    -webkit-background-size: auto;
+    background-size: auto;
+    background-position: 50% 0%;
+    background-repeat: no-repeat no-repeat;
+}
+
+#box1 {
+    float: left;
+    height: 412px;
+    margin-left: 2.247191%;
+    margin-top: 162px;
+    clear: none;
+    width: 16.445352%;
+}
+
+#box2 {
+    float: left;
+    height: 70px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    width: 100%;
+}
+
+#text {
+    float: left;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 30.910326%;
+    margin-top: 16px;
+    clear: none;
+    min-height: 0px;
+}
+
+#box3 {
+    float: left;
+    height: 0px;
+    margin-left: 0%;
+    margin-top: 38px;
+    clear: both;
+    width: 100%;
+}
+
+#box12 {
+    float: left;
+    height: 24px;
+    margin-left: 9.572917%;
+    margin-top: 0px;
+    clear: both;
+    width: 45.018229%;
+}
+
+#box13 {
+    float: left;
+    height: 26px;
+    margin-left: 9.572917%;
+    margin-top: 0px;
+    clear: both;
+    width: 45.018229%;
+}
+
+#box14 {
+    float: left;
+    height: 25px;
+    margin-left: 17.346354%;
+    margin-top: 0px;
+    clear: both;
+    width: 37.244792%;
+}
+
+#box17 {
+    float: left;
+    height: 53px;
+    margin-left: 3.257813%;
+    margin-top: 0px;
+    clear: both;
+    width: 11.815104%;
+}
+
+#box18 {
+    float: left;
+    height: 53px;
+    margin-left: 0.00260417%;
+    margin-top: 0px;
+    clear: none;
+    width: 6.190104%;
+}
+
+#box19 {
+    float: left;
+    height: 53px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    width: 7.666667%;
+}
+
+#box20 {
+    float: left;
+    height: 53px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    width: 25.661458%;
+}
+
+#box11 {
+    float: left;
+    height: 23px;
+    margin-left: 5.828125%;
+    margin-top: 107px;
+    clear: none;
+    width: 19.497396%;
+}
+
+#box8 {
+    float: left;
+    height: 16px;
+    margin-left: 13.648438%;
+    margin-top: 17px;
+    clear: none;
+    width: 5%;
+}
+
+#box9 {
+    float: left;
+    height: 16px;
+    margin-left: -4.971354%;
+    margin-top: 45px;
+    clear: none;
+    width: 5%;
+}
+
+#box10 {
+    float: left;
+    height: 16px;
+    margin-left: -4.971354%;
+    margin-top: 73px;
+    clear: none;
+    width: 5%;
+}
+
+#box5 {
+    float: left;
+    height: 203px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: both;
+    width: 100%;
+}
+
+#box4 {
+    float: left;
+    height: 139px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: both;
+    width: 100%;
+}
+
+#box21 {
+    float: left;
+    height: 121px;
+    margin-left: 0.8984375%;
+    margin-top: 2px;
+    clear: none;
+    width: 43.502604%;
+}
+
+#box15 {
+    float: left;
+    height: 148px;
+    margin-left: 0.3984375%;
+    margin-top: -72px;
+    clear: none;
+    width: 22.33%;
+    margin-right: 0%;
+}
+
+#box16 {
+    float: left;
+    height: 148px;
+    margin-left: 0.16666667%;
+    margin-top: -72px;
+    clear: none;
+    width: 22.33%;
+    margin-right: 0%;
+}
+
