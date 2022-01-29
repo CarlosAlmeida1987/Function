@@ -2,7 +2,8 @@
  // Conectando ao banco de dados:
  @include_once("controler/local.php");
 
- @$c = $_POST['Cliente'];
+ echo @$c = $_POST['Cliente'];
+ //echo @$c = date_format($c, 'Y-m-d');
  
  $sql91 = "SELECT css FROM `designer`  WHERE`ativo` = '1';";
 	 

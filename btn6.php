@@ -14,7 +14,7 @@
 <body>
 <form action="bordado.php" method="post" name="form1" target="_parent" id="form1">
   <label for="Cliente">Cliente:</label>
-  <input type="text" name="Cliente" id="Cliente">
+  <input type="date" name="Cliente" id="Cliente">
   <input type="submit" name="submit" id="submit" value="Imprimir">
 </form>
 
