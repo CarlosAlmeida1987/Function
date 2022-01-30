@@ -51,6 +51,7 @@
       <th scope="col">Valor</th>
       <th scope="col">Modelo</th>
       <th scope="col">Data</th>
+      <th scope="col">Telefone</th>
     </tr>
        <!-- i.Cliente_idCliente in (".$c.") -->
             <!-- i.Cliente_idCliente in (".$c.") -->
@@ -69,7 +70,7 @@
 	 }
  }
  
-  $sql1 = "SELECT i.idImpressao, i.Produto_idProduto, i.Etapa_idEtapa, i.Cliente_idCliente, i.Tipo_idTipo, i.qtd, i.Cor, i.tamanho, i.obs , t.modelo, c.nome, c.endereco, p.nome produto , i.pago FROM impressao i, produto p, etapa e, tipo t, cliente c WHERE i.idImpressao in (".$idImpressao.") and i.Produto_idProduto = p.idProduto and i.Etapa_idEtapa = e.idEtapa and i.Tipo_idTipo = t.idTipo and i.Cliente_idCliente = c.idCliente;";
+  $sql1 = "SELECT i.idImpressao, i.Produto_idProduto, i.Etapa_idEtapa, i.Cliente_idCliente, i.Tipo_idTipo, i.qtd, i.Cor, i.tamanho, i.obs , t.modelo, c.nome, c.endereco, c.telefone, p.nome produto , i.pago FROM impressao i, produto p, etapa e, tipo t, cliente c WHERE i.idImpressao in (".$idImpressao.") and i.Produto_idProduto = p.idProduto and i.Etapa_idEtapa = e.idEtapa and i.Tipo_idTipo = t.idTipo and i.Cliente_idCliente = c.idCliente;";
 	 
   $resultado1 = mysqli_query($strcon,$sql1) or die("Erro ao retornar dados");
 
@@ -90,6 +91,7 @@
 	$modelo = $registro1['modelo'];
 	$nome = $registro1['nome'];
 	$endereco = $registro1['endereco'];
+	$telefone = $registro1['telefone'];
 	
 	
 
@@ -119,7 +121,7 @@ QRcode::png("http://www.trimetria.com.br/NotadeMesa/aut_img.php?Cliente=$idImpre
 echo '<img src="'.$PNG_WEB_DIR.basename($filename).'" /><hr/>';
 ?></th>
       <th scope="col"><?php echo $Cliente_idCliente; ?></th>
-      <th scope="col"><?php echo $idImpressao; ?></th>
+      <th scope="col"><?php echo "<a href='aut_img.php?Cliente=$idImpressao' target='_blank' > $idImpressao </a>"; ?></th>
       <th scope="col"><?php echo $nome; ?></th>
       <th scope="col"><?Php echo $produto; ?></th>
       <th scope="col"><?Php echo $qtd;?></th>
@@ -128,6 +130,7 @@ echo '<img src="'.$PNG_WEB_DIR.basename($filename).'" /><hr/>';
       <th scope="col"><?Php echo $pago;?></th>
       <th scope="col"><?Php echo $modelo; ?></th>
       <th scope="col"><?Php echo $data; ?></th>
+      <th scope="col"><a target="_blank" href="https://api.whatsapp.com/send?phone=55<?Php echo $telefone;?>&text=NOVA DEMANDA : <?Php echo $idImpressao;?> Solicitado: <?Php echo $produto; ?> Tamanho: <?Php echo $tamanho;?> Assunto: <?Php echo $modelo; ?> Qual nome e sobrenome para Bordar? "> Whatsapp <?Php echo $telefone;?> Enviar</a></th>
     </tr>
 		<?Php  
 			@$Total = $Total + $pago;	

@@ -19,6 +19,19 @@ if ($strcon->query($sql1) === TRUE) {
   echo "Error: " . $sql1 ." --- <br>" . $strcon->error;
 }
   }
+
+if($Atualizar == "FINALIZAR"){
+	  // Ativo Bordado Pronto
+ $sql1 = "UPDATE `impressao` 
+SET `fl_status` = 'OK'
+WHERE Cliente_idCliente = ".$id." and idImpressao = '".$idImpressao."';";
+
+if ($strcon->query($sql1) === TRUE) {
+  echo "<br> Nova gravação criada com sucesso Impressão 1 <br>";
+} else {
+  echo "Error: " . $sql1 ." --- <br>" . $strcon->error;
+}
+  }
   
 ?>
 
@@ -107,6 +120,15 @@ if ($strcon->query($sql1) === TRUE) {
           <input name="idImpressao" type="hidden" id="idImpressao" value="<?Php echo $idImpressao; ?>">
           
       <input id="input" type="submit" value="Separar"></input>
+      
+      </form>
+	  <form action="separar.php" method="post" enctype="multipart/form-data" target="_parent" accept-charset="UTF-8">
+          
+          <input name="Status" type="hidden" id="Status" value="FINALIZAR">
+          <input name="idCliente" type="hidden" id="idCliente" value="<?Php echo $Cliente_idCliente; ?>">
+          <input name="idImpressao" type="hidden" id="idImpressao" value="<?Php echo $idImpressao; ?>">
+          
+      <input id="input" type="submit" value="Entrega"></input>
       
       </form>
       </th>
