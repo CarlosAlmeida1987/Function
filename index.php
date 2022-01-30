@@ -90,24 +90,24 @@
       <td><a href="ok.php">06 - Finalizados</a></td>
       <td>OK</td>
       <td>&nbsp;</td>
-      <td><a href="nota3.php?Cliente=Carlos">06 - Busca Nome</a></td>
+      <td><a href="btn_nome.php">06 - Busca Nome</a></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td><a href="separar.php"></a></td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td><a href="reserva.php">07 - Reserva</a></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><a href="btn9.php">07 - Nota QR-Code</a></td>
-      <td>&nbsp;</td>
+      <td>Edt e Zap</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td><a href="fabricacao.php"></a></td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td><a href="rel_cli.php">08 - Pedido Cli</a></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><a href="nota5.php?Cliente=Carlos">08 - Busca Turma</a></td>
@@ -120,8 +120,8 @@
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td><a href="btn_mod.php" target="_parent">09 - Imprimir Cod</a></td>
+      <td>Comanda Cod</td>
       <td>&nbsp;</td>
     </tr>
   </tbody>
