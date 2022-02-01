@@ -99,7 +99,7 @@
  {	
 	
 	$ajuste = $registro43['nome'];
-	$data = $registro43['data'];
+	$data = date_create($registro43['data']);
 	$position = $registro43['position'];
 	//$idImagens = $registro43['idImagens'];
 	//$bordar_nome = $registro43['bordar_nome'];
@@ -170,7 +170,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-               <?Php echo $data; ?>
+               <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                 <?php echo $nome; ?>
@@ -271,7 +271,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -352,7 +352,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -433,7 +433,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -512,7 +512,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -614,7 +614,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -706,7 +706,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -787,7 +787,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -877,7 +877,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -979,7 +979,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -1058,7 +1058,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -1144,7 +1144,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -1272,7 +1272,7 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -1390,7 +1390,125 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
+                <?Php echo date_format($data,"d/m/Y"); ?>
+                </div>
+                <div id="box12" class="clearfix">
+                 <?php echo $nome; ?>
+                </div>
+                <div id="box13" class="clearfix">
+                <?Php echo $ajustes; ?>
+              </div>
+                <div id="box14" class="clearfix">
+                <?Php echo $endereco; ?>
+              </div>
+              <div id="box15" class="clearfix">
+                <p>02</p>
+                <?php 
+				$sql1035 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 2 and l.Imagens_idImagens = i.idImagens;";
+	 
+  $resultado1035 = mysqli_query($strcon,$sql1035) or die("Erro ao retornar dados");
+
+ // Obtendo os dados por meio de um loop while
+ while (@$registro1035 = mysqli_fetch_array($resultado1035))
+ {	
+	 $Links1035 = $registro1035['Links'];
+	 echo "<img src='img/".$Links1035."' width='100%' alt=''/>";
+ }
+?>
+			
+                
+                </div>
+                <div id="box16" class="clearfix">
+                <p>03</p>
+                <?php 
+				
+				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 7 and l.Imagens_idImagens = i.idImagens;";
+	 
+  $resultado105 = mysqli_query($strcon,$sql105) or die("Erro ao retornar dados");
+
+ // Obtendo os dados por meio de um loop while
+ while (@$registro105 = mysqli_fetch_array($resultado105))
+ {	
+    $bordar_nome = $registro105['bordar_nome'];
+	$bordar_curso = $registro105['bordar_curso'];
+ }
+ echo $bordar_nome."<br>";
+ echo $bordar_curso."<br>";
+?> 
+
+			
+                </div> 
+                <div id="box17" class="clearfix">
+                <?Php echo $produto; ?>
+                </div>
+                <div id="box18" class="clearfix">
+                <?Php echo $qtd;?>
+                </div>
+                <div id="box19" class="clearfix">
+                <?Php echo $cor;?>
+                </div>
+                <div id="box20" class="clearfix">
+                <?Php echo $tamanho;
+				echo "</br></br> Impressao: $idImpressao";
+				?>
+                </div>
+              <div id="box21" class="clearfix">
+              <table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th scope="col"><p>01</p>
+                <?php 
+				
+				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 6 and l.Imagens_idImagens = i.idImagens;";
+	 
+  $resultado105 = mysqli_query($strcon,$sql105) or die("Erro ao retornar dados");
+
+ // Obtendo os dados por meio de um loop while
+ while (@$registro105 = mysqli_fetch_array($resultado105))
+ {	
+    $bordar_nome = $registro105['bordar_nome'];
+	$bordar_curso = $registro105['bordar_curso'];
+ }
+ echo $bordar_nome."<br>";
+ echo $bordar_curso."<br>";
+?> 
+             </th>
+      <th scope="col">
+                
+             </th>
+    </tr>
+  </tbody>
+</table>
+
+              
+               </div>
+            </div> 
+			<!-- Fim -->
+<?Php } else if($Tipo_idTipo == 19){
+	 
+  $bordar_nome = " ";
+  $bordar_curso = " ";
+  $Links1035 = " ";
+  $Links1045 = " ";
+  ?>  
+            
+            <!-- Inicio -->
+             <div id="box6" >
+             <img class="img_f" src="img/fundo_600_410.jpg" width="600" height="411" alt=""/>
+                <div id="<?Php echo $css; ?>" class="clearfix"> 
+                </div>
+                
+                <div id="box8" class="clearfix">
+                  
+                </div>
+                <div id="box9" class="clearfix">
+                
+                </div>
+                <div id="box10" class="clearfix">
+                
+              </div>
+                <div id="box11" class="clearfix">
+                <?Php echo date_format($data,"d/m/Y"); ?>
                 </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
@@ -1503,11 +1621,11 @@
                 
               </div>
                 <div id="box11" class="clearfix">
-                <?Php echo $data; ?>
-                </div>
+                <?Php echo date_format($data,"d/m/Y"); ?>
+                   </div>
                 <div id="box12" class="clearfix">
                  <?php echo $nome; ?>
-                </div>
+                 </div>
                 <div id="box13" class="clearfix">
                 <?Php echo $ajustes; ?>
               </div>
