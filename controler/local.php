@@ -5,9 +5,7 @@ $nomeBanco = 'mesa';
 $Usuario = 'root';
 $Senha = '';
 $strcon = mysqli_connect($Servidor, $Usuario, $Senha, $nomeBanco); 
-?>
 
-<?php
 
  /* Dados do Banco de Dados a conectar 
 date_default_timezone_set('America/Fortaleza');
@@ -17,4 +15,5 @@ $Usuario = 'trimetri_mesa';
 $Senha = 'Grifo@1987';
 $strcon = mysqli_connect($Servidor, $Usuario, $Senha, $nomeBanco);  
 */
+
 ?>
