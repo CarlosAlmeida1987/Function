@@ -8,7 +8,7 @@ $strcon = mysqli_connect($Servidor, $Usuario, $Senha, $nomeBanco);
 ?>
 
 <?php
-echo "...";
+
  /* Dados do Banco de Dados a conectar 
 date_default_timezone_set('America/Fortaleza');
 $Servidor = 'localhost';
