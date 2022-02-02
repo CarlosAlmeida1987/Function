@@ -1,8 +1,12 @@
 <?php
  // Conectando ao banco de dados:
  @include_once("controler/local.php");
-
  @$c = $_POST['Cliente'];
+ 
+if(empty($c)){
+	@$c = $_GET['data'];
+}
+
  //echo @$c = date_format($c, 'Y-m-d');
  
  $sql91 = "SELECT css FROM `designer`  WHERE`ativo` = '1';";
