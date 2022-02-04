@@ -59,7 +59,7 @@ if(empty($c)){
 	 }
  }
 
-      $sql1 = "SELECT i.idImpressao, i.Produto_idProduto, i.Etapa_idEtapa, i.Cliente_idCliente, i.Tipo_idTipo, i.qtd, i.Cor, i.tamanho, i.obs , t.css, c.nome, c.endereco, p.nome produto FROM impressao i, produto p, etapa e, tipo t, cliente c WHERE i.idImpressao in (".$idImpressao.") and i.Produto_idProduto = p.idProduto and i.Etapa_idEtapa = e.idEtapa and i.Tipo_idTipo = t.idTipo and i.Cliente_idCliente = c.idCliente;";
+      $sql1 = "SELECT i.idImpressao, i.Produto_idProduto, i.Etapa_idEtapa, i.Cliente_idCliente, i.Tipo_idTipo, i.qtd, i.Cor, i.tamanho, i.obs, i.fl_status, t.css, c.nome, c.endereco, p.nome produto FROM impressao i, produto p, etapa e, tipo t, cliente c WHERE i.idImpressao in (".$idImpressao.") and i.Produto_idProduto = p.idProduto and i.Etapa_idEtapa = e.idEtapa and i.Tipo_idTipo = t.idTipo and i.Cliente_idCliente = c.idCliente;";
 
   $resultado1 = mysqli_query($strcon,$sql1) or die("Erro ao retornar dados");
 
@@ -79,9 +79,7 @@ if(empty($c)){
 	$css = $registro1['css'];
 	$nome = $registro1['nome'];
 	$endereco = $registro1['endereco'];
-	
-
-	
+	$status = $registro1['fl_status'];
 	
 	/*$sql43 = "SELECT l.nome, l.data FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." or l.position = 2 or l.position = 1 and l.Imagens_idImagens = i.idImagens;";
 	 
@@ -265,7 +263,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
