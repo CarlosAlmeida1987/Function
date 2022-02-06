@@ -476,7 +476,7 @@ if(isset($bordado3_curso)){
     $vl_bordado6 = $registro['nu_valor'];
 
  }
-$sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`, `bordar_nome`, `bordar_curso`) VALUES (NULL, '".$idImpressao."', '2', '".$ajuste."', '".$vl_bordado6."', '6','".$data."','".$bordado3_nome."','".$bordado3_curso."');";
+$sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`, `bordar_nome`, `bordar_curso`) VALUES (NULL, '".$idImpressao."', '8', '".$ajuste."', '".$vl_bordado6."', '6','".$data."','".$bordado3_nome."','".$bordado3_curso."');";
 
  if ($strcon->query($sql15) === TRUE) {
   echo "Nova gravação criada com sucesso";

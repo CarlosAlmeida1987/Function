@@ -117,7 +117,7 @@
     <tr>
       <td><a href="entregar.php"></a></td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td><a href="btn10.php">09 - Valor Bordado</a></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><a href="btn_mod.php" target="_parent">09 - Imprimir Cod</a></td>

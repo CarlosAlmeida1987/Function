@@ -31,13 +31,13 @@
  @$bordado30 = $_POST['bordado3'];
  @$bordado40 = $_POST['bordado4'];
  @$bordado50 = $_POST['bordado5'];
- @$bordado_nome30 = $_POST['bordado_nome'];
- @$bordado_curso30 = $_POST['bordado_curso'];
  @$produto30 = $_POST['produto'];
  @$ajuste30 = $_POST['ajuste'];
  @$data30 = $_POST['data'];
  @$bordado30_nome = $_POST['bordado3_nome'];
  @$bordado30_curso = $_POST['bordado3_curso'];
+ @$bordado31_nome = $_POST['bordado4_nome'];
+ @$bordado31_curso = $_POST['bordado4_curso'];
  @$fl_status30 = $_POST['ativo'];
  $position1 = 0;
  $position2 = 0;
@@ -45,6 +45,7 @@
  $position4 = 0;
  $position5 = 0;
  $position6 = 0;
+ $position7 = 0;
  
  if($Atualizar == "OK"){
    @$id = $_POST['Cliente'];
@@ -164,6 +165,18 @@ WHERE Impressao_idImpressao = '".$id."' and position = 6;";
   echo "Error: " . $sql16 . "<br>" . $strcon->error;
 }
 }
+	 
+if( $bordado31_nome != '0'){
+$sql17 = "UPDATE `lista_bordados` 
+SET `nome` = '".$ajuste30."', `data` = '".$data30."', `bordar_nome` = '".$bordado31_nome."', `bordar_curso` = '".$bordado31_curso."'
+WHERE Impressao_idImpressao = '".$id."' and position = 6;";
+
+ if ($strcon->query($sql17) === TRUE) {
+  echo "<br> Nova gravação criada com sucesso Imagem 6 <br>";
+} else {
+  echo "Error: " . $sql17 . "<br>" . $strcon->error;
+}
+}
 
 $cad10 = "0";
 				$cad20 = "0";
@@ -174,7 +187,7 @@ $cad10 = "0";
 				
 $sql100 = "SELECT l.bordar_nome, l.bordar_curso, l.position, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$id." and l.Imagens_idImagens = i.idImagens;";
 	 
-  $resultado100 = mysqli_query($strcon,$sql100) or die("Erro ao retornar dados");
+  $resultado100 = my7qli_query($strcon,$sql100) or die("Erro ao retornar dados");
 
  // Obtendo os dados por meio de um loop while
  while (@$registro100 = mysqli_fetch_array($resultado100))
@@ -365,9 +378,15 @@ $sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpress
 				$bordar_nome6 = $bordar_nome;
 				$bordar_curso6 = $bordar_curso;
 				$position6 = $position;
-				}else{
-			echo $position;
 				}
+	 		else if($position == 7){
+					$vetor['img7'] = $idImagens;
+					$bordar_nome7 = $bordar_nome;
+					$bordar_curso7 = $bordar_curso;
+					$position7 = $position;
+					}else{
+				echo $position;
+					}
 	
 
  }
@@ -626,13 +645,17 @@ $sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpress
                 <div id="box20" class="clearfix">
                 <input name="tamanho" type="text" id="tamanho" value="<?Php echo $tamanho; ?>" size="10">
                 </div>
-          <div id="box21" class="clearfix">
-            <p>06</p>
-             
-                <input name="bordado3_nome" type="text" id="textfield2" value="<?Php echo $bordar_nome6; ?>" size="15">
-                <input name="bordado3_curso" type="text" id="textfield2" value="<?Php echo $bordar_curso6; ?>" size="15">
-          </div>
-          </div>
+                <div id="box42" class="clearfix">
+                  <p>06</p>
+                  <input name="bordado3_nome" type="text" id="textfield2" value="<?Php echo $bordar_nome6; ?>" size="15">
+                  <input name="bordado3_curso" type="text" id="textfield2" value="<?Php echo $bordar_curso6; ?>" size="15">
+                </div>
+			   <div id="box43" class="clearfix">
+                  <p>07</p>
+                  <input name="bordado4_nome" type="text" id="textfield2" value="<?Php echo $bordar_nome7; ?>" size="15">
+                  <input name="bordado4_curso" type="text" id="textfield2" value="<?Php echo $bordar_curso7; ?>" size="15">
+                </div>
+        </div>
           <input name="Status" type="hidden" id="Status" value="OK">
           <input name="idCliente" type="hidden" id="idCliente" value="<?Php echo $Cliente_idCliente; ?>">
           <input name="Cliente" type="hidden" id="Cliente" value="<?Php echo $idImpressao; ?>">

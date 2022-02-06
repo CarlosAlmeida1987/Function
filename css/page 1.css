@@ -6,6 +6,30 @@
 	width: 100%;
 }
 
+#box42 {
+    float: left;
+    /* height: 121px; */
+    /* margin-left: 0.8984375%; */
+    margin-top: 22px;
+    clear: none;
+    width: 22.502604%;
+    /* font-size: 1.0em; */
+    text-align: center;
+    /* background: aqua; */
+}
+
+#box43 {
+    float: left;
+    /* height: 121px; */
+    /* margin-left: 0.8984375%; */
+    margin-top: 22px;
+    clear: none;
+    width: 22.502604%;
+    /* font-size: 1.0em; */
+    text-align: center;
+    /* background: aqua; */
+}
+
 #box6 {
     float: left;
     height: 412px;
