@@ -169,21 +169,22 @@ WHERE Impressao_idImpressao = '".$id."' and position = 6;";
 if( $bordado31_nome != '0'){
 $sql17 = "UPDATE `lista_bordados` 
 SET `nome` = '".$ajuste30."', `data` = '".$data30."', `bordar_nome` = '".$bordado31_nome."', `bordar_curso` = '".$bordado31_curso."'
-WHERE Impressao_idImpressao = '".$id."' and position = 6;";
+WHERE Impressao_idImpressao = '".$id."' and position = 7;";
 
  if ($strcon->query($sql17) === TRUE) {
-  echo "<br> Nova gravação criada com sucesso Imagem 6 <br>";
+  echo "<br> Nova gravação criada com sucesso Imagem 7 <br>";
 } else {
   echo "Error: " . $sql17 . "<br>" . $strcon->error;
 }
 }
 
-$cad10 = "0";
+	 			$cad10 = "0";
 				$cad20 = "0";
 				$cad30 = "0";
 				$cad40 = "0";
 				$cad50 = "0";
 				$cad60 = "0";
+	 			$cad70 = "0";
 				
 $sql100 = "SELECT l.bordar_nome, l.bordar_curso, l.position, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$id." and l.Imagens_idImagens = i.idImagens;";
 	 
@@ -210,13 +211,17 @@ $sql100 = "SELECT l.bordar_nome, l.bordar_curso, l.position, i.Links FROM lista_
 				}
 		else if($position == 6){
 				$cad60 = "Atualizado";
+				}
+	   else if($position == 7){
+				$cad70 = "Atualizado";
 				}else{
 				$cad10 = "Erro";
 				$cad20 = "Erro";
 				$cad30 = "Erro";
 				$cad40 = "Erro";
 				$cad50 = "Erro";
-				$cad60 = "Erro";
+				$cad70 = "Erro";
+			$cad60 = "Erro";
 				}
 	
 	
@@ -235,8 +240,10 @@ $sql100 = "SELECT l.bordar_nome, l.bordar_curso, l.position, i.Links FROM lista_
 				$cad50 = "OK";
 				 }else if($cad60 != 'Atualizado'){
 				$cad60 = "OK";
+				 }else if($cad70 != 'Atualizado'){
+				$cad70 = "OK";
 				 }else { 
-				 
+				 echo "$position";
 				 }
 
 if($cad10  == 'OK') {
@@ -296,11 +303,24 @@ $sql14 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpress
 }
 }
 }
+	 
 if(strlen($cad60) == 'OK'){
 if(isset($bordado30_curso)){
-$sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`, `bordar_nome`, `bordar_curso`) VALUES (NULL, '".$id."', '2', '".$ajuste30."', '5', '6','".$data."','".$bordado30_nome."','".$bordado30_curso."');";
+$sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`, `bordar_nome`, `bordar_curso`) VALUES (NULL, '".$id."', '8', '".$ajuste30."', '5', '6','".$data."','".$bordado30_nome."','".$bordado30_curso."');";
 
  if ($strcon->query($sql15) === TRUE) {
+  echo "Nova gravação criada com sucesso";
+} else {
+  echo "Error: " . $sql15 . "<br>" . $strcon->error;
+}
+}
+}
+	 
+if(strlen($cad70) == 'OK'){
+if(isset($bordado31_curso)){
+$sql16 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`, `bordar_nome`, `bordar_curso`) VALUES (NULL, '".$id."', '8', '".$ajuste30."', '5', '6','".$data."','".$bordado31_nome."','".$bordado31_curso."');";
+
+ if ($strcon->query($sql16) === TRUE) {
   echo "Nova gravação criada com sucesso";
 } else {
   echo "Error: " . $sql15 . "<br>" . $strcon->error;
@@ -350,8 +370,18 @@ $sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpress
 	$data = $registro43['data'];
 	$position = $registro43['position'];
 	$idImagens = $registro43['idImagens'];
-	$bordar_nome = $registro43['bordar_nome'];
-	$bordar_curso = $registro43['bordar_curso'];
+	 
+	 if($position == 6){
+		$bordar6_nome = $registro43['bordar_nome'];
+		$bordar6_curso = $registro43['bordar_curso'];
+	 }else if ($position == 7) {
+		 $bordar7_nome = $registro43['bordar_nome'];
+		 $bordar7_curso = $registro43['bordar_curso'];
+	 }else{
+		 $bordar_nome = $registro43['bordar_nome'];
+		 $bordar_curso = $registro43['bordar_curso'];
+	 }
+	
 	//$valor = $registro43['valor'];
 	
 	if($position == 1){
@@ -375,14 +405,14 @@ $sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpress
 				}
 		else if($position == 6){
 				$vetor['img6'] = $idImagens;
-				$bordar_nome6 = $bordar_nome;
-				$bordar_curso6 = $bordar_curso;
+				$bordar_nome6 = $bordar6_nome;
+				$bordar_curso6 = $bordar6_curso;
 				$position6 = $position;
 				}
 	 		else if($position == 7){
 					$vetor['img7'] = $idImagens;
-					$bordar_nome7 = $bordar_nome;
-					$bordar_curso7 = $bordar_curso;
+					$bordar_nome7 = $bordar7_nome;
+					$bordar_curso7 = $bordar7_curso;
 					$position7 = $position;
 					}else{
 				echo $position;
