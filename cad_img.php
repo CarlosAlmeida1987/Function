@@ -37,14 +37,16 @@
  @$bordado4 = $_POST['bordado4'];
  @$bordado5 = $_POST['bordado5'];
  @$bordado_nome = $_POST['bordado_nome'];
- @$bordado_curso = $_POST['bordado_curso'];
- @$produto = $_POST['produto'];
- @$ajuste = $_POST['ajuste'];
- @$data = $_POST['data'];
+ @$bordado_curso = $_POST['bordado_curso']; 
  @$bordado3_nome = $_POST['bordado3_nome'];
  @$bordado3_curso = $_POST['bordado3_curso']; 
  @$bordado4_nome = $_POST['bordado4_nome'];
  @$bordado4_curso = $_POST['bordado4_curso'];
+
+ @$produto = $_POST['produto'];
+ @$ajuste = $_POST['ajuste'];
+ @$data = $_POST['data'];
+
  
   $sql910 = "SELECT css FROM `designer`  WHERE`ativo` = '1';";
 	 
@@ -359,9 +361,20 @@ if ($strcon->query($sql1) === TRUE) {
     $idImpressao = $registro['idImpressao'];
 
  }
+	 
 if($bordado1 != 0) {
 if(isset($bordado1)){
- $sql10 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`) VALUES (NULL, '".$idImpressao."', '".$bordado1."', '".$ajuste."', '5', '1','".$data."');";
+	
+	$sqlvalor1 = "select i.nu_valor from imagens i where i.idImagens = $bordado1"; 
+  $resultado = mysqli_query($strcon,$sqlvalor1) or die("Erro ao retornar dados");
+ // Obtendo os dados por meio de um loop while
+ while (@$registro = mysqli_fetch_array($resultado))
+ {	
+    $vl_bordado1 = $registro['nu_valor'];
+
+ }
+	
+ $sql10 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`) VALUES (NULL, '".$idImpressao."', '".$bordado1."', '".$ajuste."', '".$vl_bordado1."', '1','".$data."');";
  
  if ($strcon->query($sql10) === TRUE) {
   echo "Nova gravação criada com sucesso";
@@ -373,7 +386,16 @@ if(isset($bordado1)){
 
 if($bordado2 != 0) {
 if(isset($bordado2) ){
- $sql11 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`) VALUES (NULL, '".$idImpressao."', '".$bordado2."', '".$ajuste."', '5', '2','".$data."');";
+	
+	$sqlvalor2 = "select i.nu_valor from imagens i where i.idImagens = $bordado2"; 
+  $resultado = mysqli_query($strcon,$sqlvalor2) or die("Erro ao retornar dados");
+ // Obtendo os dados por meio de um loop while
+ while (@$registro = mysqli_fetch_array($resultado))
+ {	
+    $vl_bordado2 = $registro['nu_valor'];
+
+ }
+ $sql11 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`) VALUES (NULL, '".$idImpressao."', '".$bordado2."', '".$ajuste."', '".$vl_bordado2."', '2','".$data."');";
  
  if ($strcon->query($sql11) === TRUE) {
   echo "Nova gravação criada com sucesso";
@@ -384,7 +406,16 @@ if(isset($bordado2) ){
 }
 if($bordado3 != 0) {
 if(isset($bordado3)){
-$sql12 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`) VALUES (NULL, '".$idImpressao."', '".$bordado3."', '".$ajuste."', '5', '3','".$data."');";
+	
+	$sqlvalor3 = "select i.nu_valor from imagens i where i.idImagens = $bordado3"; 
+  $resultado = mysqli_query($strcon,$sqlvalor3) or die("Erro ao retornar dados");
+ // Obtendo os dados por meio de um loop while
+ while (@$registro = mysqli_fetch_array($resultado))
+ {	
+    $vl_bordado3 = $registro['nu_valor'];
+
+ }
+$sql12 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`) VALUES (NULL, '".$idImpressao."', '".$bordado3."', '".$ajuste."', '".$vl_bordado3."', '3','".$data."');";
  
  if ($strcon->query($sql12) === TRUE) {
   echo "Nova gravação criada com sucesso";
@@ -395,7 +426,16 @@ $sql12 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpress
 }
 if($bordado4 != 0) {
 if(isset($bordado4)){
-$sql13 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`) VALUES (NULL, '".$idImpressao."', '".$bordado4."', '".$ajuste."', '5', '4','".$data."');";
+	
+	$sqlvalor4 = "select i.nu_valor from imagens i where i.idImagens = $bordado4"; 
+  $resultado = mysqli_query($strcon,$sqlvalor4) or die("Erro ao retornar dados");
+ // Obtendo os dados por meio de um loop while
+ while (@$registro = mysqli_fetch_array($resultado))
+ {	
+    $vl_bordado4 = $registro['nu_valor'];
+
+ }
+$sql13 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`) VALUES (NULL, '".$idImpressao."', '".$bordado4."', '".$ajuste."', '".$vl_bordado4."', '4','".$data."');";
  
  if ($strcon->query($sql13) === TRUE) {
   echo "Nova gravação criada com sucesso";
@@ -406,7 +446,16 @@ $sql13 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpress
 }
 if($bordado5 != 0) {
 if(isset($bordado5)){
-$sql14 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`) VALUES (NULL, '".$idImpressao."', '".$bordado5."', '".$ajuste."', '5', '5','".$data."');";
+	
+	$sqlvalor5 = "select i.nu_valor from imagens i where i.idImagens = $bordado5"; 
+  $resultado = mysqli_query($strcon,$sqlvalor5) or die("Erro ao retornar dados");
+ // Obtendo os dados por meio de um loop while
+ while (@$registro = mysqli_fetch_array($resultado))
+ {	
+    $vl_bordado5 = $registro['nu_valor'];
+
+ }
+$sql14 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`) VALUES (NULL, '".$idImpressao."', '".$bordado5."', '".$ajuste."', '".$vl_bordado5."', '5','".$data."');";
 
  
  if ($strcon->query($sql14) === TRUE) {
@@ -418,7 +467,16 @@ $sql14 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpress
 }
 if(strlen($bordado3_nome) >= 6){
 if(isset($bordado3_curso)){
-$sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`, `bordar_nome`, `bordar_curso`) VALUES (NULL, '".$idImpressao."', '2', '".$ajuste."', '5', '6','".$data."','".$bordado3_nome."','".$bordado3_curso."');";
+	
+	$sqlvalor6 = "select i.nu_valor from imagens i where i.idImagens = $bordado6"; 
+  $resultado = mysqli_query($strcon,$sqlvalor6) or die("Erro ao retornar dados");
+ // Obtendo os dados por meio de um loop while
+ while (@$registro = mysqli_fetch_array($resultado))
+ {	
+    $vl_bordado6 = $registro['nu_valor'];
+
+ }
+$sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`, `bordar_nome`, `bordar_curso`) VALUES (NULL, '".$idImpressao."', '2', '".$ajuste."', '".$vl_bordado6."', '6','".$data."','".$bordado3_nome."','".$bordado3_curso."');";
 
  if ($strcon->query($sql15) === TRUE) {
   echo "Nova gravação criada com sucesso";
@@ -430,7 +488,17 @@ $sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpress
 echo "$bordado4_nome";
 if(strlen($bordado4_nome) >= 7){
 if(isset($bordado4_curso)){
-$sql16 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`, `bordar_nome`, `bordar_curso`) VALUES (NULL, '".$idImpressao."', '2', '".$ajuste."', '5', '7','".$data."','".$bordado4_nome."','".$bordado4_curso."');";
+	
+	$sqlvalor7 = "select i.nu_valor from imagens i where i.idImagens = $bordado7"; 
+  $resultado = mysqli_query($strcon,$sqlvalor7) or die("Erro ao retornar dados");
+ // Obtendo os dados por meio de um loop while
+ while (@$registro = mysqli_fetch_array($resultado))
+ {	
+    $vl_bordado7 = $registro['nu_valor'];
+
+ }
+	
+$sql16 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`, `bordar_nome`, `bordar_curso`) VALUES (NULL, '".$idImpressao."', '2', '".$ajuste."', '".$vl_bordado7."', '7','".$data."','".$bordado4_nome."','".$bordado4_curso."');";
 
  if ($strcon->query($sql16) === TRUE) {
   echo "Nova gravação criada com sucesso";
