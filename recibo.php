@@ -52,8 +52,8 @@ if(isset($telefone)){
   <div class="container contact">
 	  <div class="row">
 		  <div class="col-md-3">
-			  <div class="contact-info"> <a href="index.php"><img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/></a>
-				  <h2><a href="index.php">Entre em contato conosco</a></h2>
+			  <div class="contact-info"> <a href="#"><img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/></a>
+				  <h2><a href="#">Entre em contato conosco</a></h2>
 				  <h4>Gostaríamos muito de ouvir de você !</h4>
 			  </div>
 		  </div>

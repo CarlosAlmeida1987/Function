@@ -95,7 +95,7 @@ if(empty($c)){
  $sql43 = "SELECT l.nome, l.data, l.valor, l.position, l.bordar_nome, l.bordar_curso, i.idImagens FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.Imagens_idImagens = i.idImagens;";
 	 
  $resultado43 = mysqli_query($strcon,$sql43) or die("Erro ao retornar dados 2");
- $vetor = array('ajuste1' => " ", 'ajuste2' => " ", 'ajuste3' => " ",'ajuste4' => " ",'ajuste5' => " ",'ajuste6' => " ");
+ $vetor = array('ajuste1' => " ", 'ajuste2' => " ", 'ajuste3' => " ",'ajuste4' => " ",'ajuste5' => " ",'ajuste6' => " ",'ajuste7' => " ");
  // Obtendo os dados por meio de um loop while
  while (@$registro43 = mysqli_fetch_array($resultado43))
  {	
@@ -136,7 +136,13 @@ if(empty($c)){
 				$vetor['ajuste6'] = $ajuste;
 				$position6 = 6;
 				break;
-				}else{
+				}
+	 	else if($position == 7){
+				$vetor['ajuste7'] = $ajuste;
+				$position7 = 7;
+				break;
+				}
+	    else{
 			echo $position;
 				}
 		
@@ -162,7 +168,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
             </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -344,7 +350,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -425,7 +431,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -504,7 +510,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -606,7 +612,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -698,7 +704,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -779,7 +785,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -869,7 +875,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -971,7 +977,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -1050,7 +1056,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -1136,7 +1142,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -1264,7 +1270,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -1382,7 +1388,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -1500,7 +1506,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">
@@ -1613,7 +1619,7 @@ if(empty($c)){
                 <div id="<?Php echo $css; ?>" class="clearfix"> 
                 </div>
                 
-                <div id="box8" class="clearfix">
+                <div id="box8" class="clearfix"><?Php echo $status; ?>
                   
                 </div>
                 <div id="box9" class="clearfix">

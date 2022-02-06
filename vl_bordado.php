@@ -69,8 +69,8 @@
 	   $idImpressao = $idImpressao.",".$registro430['Impressao_idImpressao'];
 	 }
  }
- 
-  $sql1 = "SELECT i.idImpressao, i.Produto_idProduto, i.Etapa_idEtapa, i.Cliente_idCliente, i.Tipo_idTipo, i.qtd, i.Cor, i.tamanho, i.obs , t.modelo, c.nome, c.endereco, c.telefone, p.nome produto , i.pago FROM impressao i, produto p, etapa e, tipo t, cliente c WHERE i.idImpressao in (".$idImpressao.") and i.Produto_idProduto = p.idProduto and i.Etapa_idEtapa = e.idEtapa and i.Tipo_idTipo = t.idTipo and i.Cliente_idCliente = c.idCliente ORDER BY t.modelo ASC ;";
+ $vl = 0;
+  $sql1 = "SELECT i.idImpressao, i.Produto_idProduto, i.Etapa_idEtapa, i.Cliente_idCliente, i.Tipo_idTipo, i.qtd, i.Cor, i.tamanho, i.obs , t.modelo, c.nome, c.endereco, c.telefone, p.nome produto, p.nu_valor, i.pago FROM impressao i, produto p, etapa e, tipo t, cliente c WHERE i.idImpressao in (".$idImpressao.") and i.Produto_idProduto = p.idProduto and i.Etapa_idEtapa = e.idEtapa and i.Tipo_idTipo = t.idTipo and i.Cliente_idCliente = c.idCliente ORDER BY t.modelo ASC ;";
 	 
   $resultado1 = mysqli_query($strcon,$sql1) or die("Erro ao retornar dados");
 
@@ -83,17 +83,35 @@
 	$Cliente_idCliente = $registro1['Cliente_idCliente'];
 	$qtd = $registro1['qtd'];
 	$cor = $registro1['Cor'];
-	$produto = $registro1['produto'];
+	echo $produto = $registro1['produto'];
 	$tamanho = $registro1['tamanho'];
 	$obs = $registro1['obs'];
 	$pago = $registro1['pago'];
+	$nu_valor = $registro1['nu_valor'];
 	$Produto_idProduto = $registro1['Produto_idProduto'];
 	$modelo = $registro1['modelo'];
 	$nome = $registro1['nome'];
 	$endereco = $registro1['endereco'];
 	$telefone = $registro1['telefone'];
 	
-	
+	$vl_custo = 0;
+	if($produto == "Blusa"){
+	 $vl_custo = 6;
+	}else if($produto == "Jaleco"){
+		$vl_custo = 25;
+	}else if($produto == "Pijama Hospitalar"){
+	   $vl_custo = 10;
+	}else if($produto == "Jaleco Ziper"){
+		$vl_custo = 31;
+	}else if($produto == "Blusa Gola Careca"){
+		$vl_custo = 7; 
+	}else if($produto == "Boné"){
+		$vl_custo = 5; 
+	}else{
+		echo "Erro";
+	}
+	 
+	 
     $pagar = 0;
 	$valor = 0;
 	
@@ -107,7 +125,6 @@
 	$ajuste = $registro43['nome'];
 	$data = $registro43['data'];
     $valor = $registro43['valor'];
-	 
   @$pagar = $pagar + $valor; 
  }
  @$i = $i + 1;
@@ -136,21 +153,23 @@ echo '<img src="'.$PNG_WEB_DIR.basename($filename).'" /><hr/>';
       <th scope="col"><a target="_blank" href="https://api.whatsapp.com/send?phone=55<?Php echo $telefone;?>&text=NOVA DEMANDA : <?Php echo $idImpressao;?> Solicitado: <?Php echo $produto; ?> Tamanho: <?Php echo $tamanho;?> Assunto: <?Php echo $modelo; ?> Qual nome e sobrenome para Bordar? "> Whatsapp <?Php echo $telefone;?> Enviar</a></th>
     </tr>
 		<?Php  
-			@$Total =  $Total + $pagar;	
+	 		@$Mercadoria = $Mercadoria + $nu_valor;
+			@$Total =  $Total + $pagar;
+	 		@$Custo =  $Custo + $vl_custo;	
 		?>
         
 			<?Php }?>
                <tr>
       <th scope="col"></th>
       <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
+      <th scope="col">Custo</th>
+      <th scope="col"><?Php echo $Custo; ?></th>
+      <th scope="col">Mercadoria</th>
+      <th scope="col"><?Php echo $Mercadoria; ?></th>
       <th scope="col"></th>
       <th scope="col">Total</th>
       <th scope="col"><?Php echo $Total; ?></th>
-      <th scope="col"></th>
+      <th scope="col"><?Php echo $Total+$Mercadoria+$Custo; ?></th>
       <th scope="col"><?php echo date("d-m-Y H:i:s"); ?></th>
     </tr>
   </tbody>

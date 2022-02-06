@@ -674,6 +674,7 @@ $sql16 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpress
                 </div>
                 <div id="box20" class="clearfix">
                 <input name="tamanho" type="text" id="tamanho" value="<?Php echo $tamanho; ?>" size="10">
+					<?Php echo "</br> Impressao: $idImpressao";?>
                 </div>
                 <div id="box42" class="clearfix">
                   <p>06</p>
