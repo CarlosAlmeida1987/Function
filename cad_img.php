@@ -36,6 +36,9 @@
  @$bordado3 = $_POST['bordado3'];
  @$bordado4 = $_POST['bordado4'];
  @$bordado5 = $_POST['bordado5'];
+ @$bordado6 = 23;
+ @$bordado7 = 2;
+ @$bordado8 = $_POST['bordado8'];
  @$bordado_nome = $_POST['bordado_nome'];
  @$bordado_curso = $_POST['bordado_curso']; 
  @$bordado3_nome = $_POST['bordado3_nome'];
@@ -93,7 +96,7 @@
                     <input id="input" type="submit" value="Selecionar"></input>
 <form action="cad_img.php" method="post" enctype="multipart/form-data" target="_parent" accept-charset="UTF-8">
                     <select name="tipo">
-<option value="<?Php echo $idTipo; ?> " selected>Selecione um Modelo</option>
+<option value="<?Php echo @$idTipo; ?> " selected>Selecione um Modelo</option>
  <?Php $sql4 = "SELECT t.idTipo, t.modelo, t.pontos, t.link, t.css FROM tipo t;"; 
   $resultado = mysqli_query($strcon,$sql4) or die("Erro ao retornar dados");
  // Obtendo os dados por meio de um loop while
@@ -476,7 +479,7 @@ if(isset($bordado3_curso)){
     $vl_bordado6 = $registro['nu_valor'];
 
  }
-$sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`, `bordar_nome`, `bordar_curso`) VALUES (NULL, '".$idImpressao."', '8', '".$ajuste."', '".$vl_bordado6."', '6','".$data."','".$bordado3_nome."','".$bordado3_curso."');";
+$sql15 = "INSERT INTO `lista_bordados` (`idLista_bordados`, `Impressao_idImpressao`, `Imagens_idImagens`, `nome`, `valor`, `position`, `data`, `bordar_nome`, `bordar_curso`) VALUES (NULL, '".$idImpressao."', '23', '".$ajuste."', '".$vl_bordado6."', '8','".$data."','".$bordado3_nome."','".$bordado3_curso."');";
 
  if ($strcon->query($sql15) === TRUE) {
   echo "Nova gravação criada com sucesso";

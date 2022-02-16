@@ -66,7 +66,7 @@ if(empty($c)){
  // Obtendo os dados por meio de um loop while
  while (@$registro1 = mysqli_fetch_array($resultado1))
  {	
-    $Tipo_idTipo = $registro1['Tipo_idTipo'];
+ echo   $Tipo_idTipo = $registro1['Tipo_idTipo'];
     $idImpressao = $registro1['idImpressao'];
 	$Etapa_idEtapa = $registro1['Etapa_idEtapa'];
 	$Cliente_idCliente = $registro1['Cliente_idCliente'];
@@ -239,7 +239,7 @@ if(empty($c)){
               <div id="box21" class="clearfix">
               <p>03</p>
                                 <?php 
-				$sql15 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 6 and l.Imagens_idImagens = i.idImagens;";
+				$sql15 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 8 and l.Imagens_idImagens = i.idImagens;";
 	 
   $resultado15 = mysqli_query($strcon,$sql15) or die("Erro ao retornar dados");
 
@@ -326,7 +326,7 @@ if(empty($c)){
               <p>01</p>
                 <?php 
 				
-				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 6 and l.Imagens_idImagens = i.idImagens;";
+				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 8 and l.Imagens_idImagens = i.idImagens;";
 	 
   $resultado105 = mysqli_query($strcon,$sql105) or die("Erro ao retornar dados");
 
@@ -398,7 +398,7 @@ if(empty($c)){
               <p>01</p>
                 <?php 
 				
-				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 6 and l.Imagens_idImagens = i.idImagens;";
+				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 8 and l.Imagens_idImagens = i.idImagens;";
 	 
   $resultado105 = mysqli_query($strcon,$sql105) or die("Erro ao retornar dados");
 
@@ -946,7 +946,7 @@ if(empty($c)){
               <p>01</p>
                 <?php 
 				
-				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 6 and l.Imagens_idImagens = i.idImagens;";
+				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 8 and l.Imagens_idImagens = i.idImagens;";
 	 
   $resultado105 = mysqli_query($strcon,$sql105) or die("Erro ao retornar dados");
 
@@ -1026,7 +1026,7 @@ if(empty($c)){
               <p>01</p>
                 <?php 
 				
-				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 6 and l.Imagens_idImagens = i.idImagens;";
+				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 8 and l.Imagens_idImagens = i.idImagens;";
 	 
   $resultado105 = mysqli_query($strcon,$sql105) or die("Erro ao retornar dados");
 
@@ -1217,7 +1217,7 @@ if(empty($c)){
       <th scope="col"><p>01</p>
                 <?php 
 				
-				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 6 and l.Imagens_idImagens = i.idImagens;";
+				$sql105 = "SELECT l.bordar_nome, l.bordar_curso, i.Links FROM lista_bordados l, imagens i WHERE l.Impressao_idImpressao = ".$idImpressao." and l.position = 8 and l.Imagens_idImagens = i.idImagens;";
 	 
   $resultado105 = mysqli_query($strcon,$sql105) or die("Erro ao retornar dados");
 
